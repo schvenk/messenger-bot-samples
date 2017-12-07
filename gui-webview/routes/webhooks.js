@@ -10,6 +10,7 @@ import express from 'express';
 
 // ===== MESSENGER =============================================================
 import receiveApi from '../messenger-api-helpers/receive';
+import logger from '../messenger-api-helpers/fba-logging';
 
 const router = express.Router();
 
@@ -64,8 +65,10 @@ router.post('/', (req, res) => {
         console.log({messagingEvent});
         if (messagingEvent.message) {
           receiveApi.handleReceiveMessage(messagingEvent);
-        } if (messagingEvent.postback) {
+        } else if (messagingEvent.postback) {
           receiveApi.handleReceivePostback(messagingEvent);
+        } else if (messagingEvent.referral) {
+          receiveApi.handleReceiveReferral(messagingEvent);
         } else {
           console.log(
             'Webhook received unknown messagingEvent: ',

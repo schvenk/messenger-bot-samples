@@ -2,7 +2,7 @@
   "name": "chat-extensions",
   "version": "0.1.0",
   "engines": {
-    "node": "7.4.x",
+    "node": ">7.10.1",
     "npm": "4.0.x"
   },
   "description": "Design best practices demo for Chat Extensions on the Messenger Platform.",
@@ -22,7 +22,7 @@
   "dependencies": {
     "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
-    "babel-loader": "^6.2.10",
+    "babel-loader": "^7.1.2",
     "babel-plugin-module-resolver": "^2.5.0",
     "babel-plugin-react-transform": "^2.0.2",
     "babel-plugin-transform-class-properties": "^6.22.0",
